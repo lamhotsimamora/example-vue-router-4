@@ -91,12 +91,13 @@
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </center>
+            <br>
             <table class="table table-success table-striped">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Completed</th>
+                        <th scope="col">Body</th>
                     </tr>
                 </thead>
 
@@ -104,7 +105,7 @@
                     <tr v-for="data in datas">
                         <th scope="row">{{data.id}}</th>
                         <td>{{data.title}}</td>
-                        <td>{{data.completed}}</td>
+                        <td>{{data.body}}</td>
                     </tr>
                 </tbody>
             </table>

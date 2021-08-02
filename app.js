@@ -29,7 +29,12 @@ const Table = {
     methods: {
         loadData: function () {
             this.loading = true
-            fetch('https://jsonplaceholder.typicode.com/todos')
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                    // method: 'post',
+                    // body: JSON.stringify({
+                    //     posts : 1
+                    // })
+                })
                 .then(response => response.json())
                 .then(json => {
 
