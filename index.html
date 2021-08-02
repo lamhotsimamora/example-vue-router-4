@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 & Vue Router 4</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/css/bootstrap.min.css"
+        integrity="sha512-NZ19NrT58XPK5sXqXnnvtf9T5kLXSzGQlVZL9taZWeTBtXoN3xIfTdxbkQh6QSoJfJgpojRqMfhyqBAAEeiXcA=="
+        crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div id="app1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <router-link class="navbar-brand" to="/">PDR Technology</router-link>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <router-link class="nav-link active" aria-current="page" to="/profile">Profile</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" aria-current="page" to="/about">About</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" aria-current="page" to="/contact">Contact</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" aria-current="page" to="/user/12">User</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" aria-current="page" to="/search/12345">Search
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" aria-current="page" to="/page404">404</router-link>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="button">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <br>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                  
+                    <router-view>
+
+                    </router-view>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <br><br>
+    <div class="container">
+
+        <div id="app2">
+            Counter: {{ counter }}
+            <br><br>
+            <button @click="helloWorld" type="button" class="btn btn-primary">Hello World</button>
+        </div>
+
+        <hr>
+
+       
+
+        <div id="table" class="table-responsive">
+            <center v-if="loading">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </center>
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Completed</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr v-for="data in datas">
+                        <th scope="row">{{data.id}}</th>
+                        <td>{{data.title}}</td>
+                        <td>{{data.completed}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="vue-router/template.js"></script>
+    <script src="vue-router/route.js"></script>
+    <script src="vue-router/index.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

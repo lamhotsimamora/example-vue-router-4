@@ -1,2 +1,3 @@
 # example-vue-router-4
-Example vue router 4 (latest)
+
+Example Vue Router 4 (latest) with Vue 3
